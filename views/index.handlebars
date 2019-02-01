@@ -1,0 +1,14 @@
+<div class="row">
+
+    <div class="col-md-4 col-sm-12 col-xs-12">
+    	<h3 class="heading">Burger Wishlist</h3>
+        {{#each burgers}} 
+        	{{#unless this.devoured}} 
+		        <form class="eat-form form-group" action="/{{this.id}}?_method=PUT" method="POST">
+		        	{{this.burger_name}}
+		            <input type="hidden" name="eat" value="true">
+		            <input type="image" class="eat-icon" src="assets/img/eat.png" alt="eat icon"/>
+		        </form>
+        	{{/unless}} 
+        {{/each}}
+    </div>
